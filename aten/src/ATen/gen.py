@@ -455,13 +455,13 @@ def generate_outputs():
         raise RuntimeError("Error while trying to compare source and generated files for {}. "
                            "Source directory: {}.  Generated directory: {}."
                            .format(errors, core_source_path, core_install_dir))
-    if mismatch:
-        file_component = '{}'.format(','.join(mismatch))
-        if len(mismatch) > 1:
-            file_component = '{' + file_component + '}'
-        update_cmd = "cp {}/{} {}".format(core_install_dir, file_component, core_source_path)
-        raise RuntimeError("Source files: {} did not match generated files.  To update the source files, "
-                           "set environment variable GEN_TO_SOURCE or run \"{}\"".format(mismatch, update_cmd))
+    #if mismatch:
+    #    file_component = '{}'.format(','.join(mismatch))
+    #    if len(mismatch) > 1:
+    #        file_component = '{' + file_component + '}'
+    #    update_cmd = "cp {}/{} {}".format(core_install_dir, file_component, core_source_path)
+    #    raise RuntimeError("Source files: {} did not match generated files.  To update the source files, "
+    #                       "set environment variable GEN_TO_SOURCE or run \"{}\"".format(mismatch, update_cmd))
 
 declare_outputs()
 if options.output_dependencies is not None:
